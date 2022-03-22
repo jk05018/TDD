@@ -47,6 +47,18 @@ public class PasswordStrengthMeterTest {
 		assertStrength("abdefghi",PasswordStrength.WEEK);
 	}
 
+	@DisplayName("7. 숫자 포함 조건만 충족하는 경우")
+	@Test
+	public void meetsOnlyNumCriteria_Then_Weak() throws Exception{
+		assertStrength("12345",PasswordStrength.WEEK);
+	}
+
+	@DisplayName("8. 대문자 포함 조건만 충족하는 경우")
+	@Test
+	public void meetsOnlyUpperCriteria_Then_Weak() throws Exception{
+		assertStrength("ABZEF",PasswordStrength.WEEK);
+	}
+
 	private void assertStrength(String s, PasswordStrength expStr) {
 		PasswordStrength result = meter.meter(s);
 		assertEquals(result, expStr);
