@@ -59,6 +59,12 @@ public class PasswordStrengthMeterTest {
 		assertStrength("ABZEF",PasswordStrength.WEEK);
 	}
 
+	@DisplayName("9. 아무 조건도 충족하지 않는 경우")
+	@Test
+	public void meetsNoCriteria_Then_Weak() throws Exception{
+		assertStrength("abc",PasswordStrength.WEEK);
+	}
+
 	private void assertStrength(String s, PasswordStrength expStr) {
 		PasswordStrength result = meter.meter(s);
 		assertEquals(result, expStr);
