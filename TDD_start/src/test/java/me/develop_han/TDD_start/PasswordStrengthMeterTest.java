@@ -29,6 +29,24 @@ public class PasswordStrengthMeterTest {
 		assertStrength("ab!@ABqwer", PasswordStrength.NORMAL);
 	}
 
+	@DisplayName("4. 값이 존재하지 않을 경우 ")
+	@Test
+	public void nullInput_Then_Invalid() throws Exception {
+		assertStrength(null, PasswordStrength.INVALID);
+	}
+
+	@DisplayName("5. 대문자를 포함하지 않고 나머지 조건을 충족하는 경우")
+	@Test
+	public void meetsOtherCriteria_except_for_Uppercase_then_Normal() throws Exception{
+		assertStrength("ab12!@df",PasswordStrength.NORMAL);
+	}
+
+	@DisplayName("6. 길이가 8글자 이상인 조건만 충족하는 경우")
+	@Test
+	public void meetsOnlyLengthCriteria_Then_Weak() throws Exception{
+		assertStrength("abdefghi",PasswordStrength.WEEK);
+	}
+
 	private void assertStrength(String s, PasswordStrength expStr) {
 		PasswordStrength result = meter.meter(s);
 		assertEquals(result, expStr);

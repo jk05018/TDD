@@ -3,16 +3,27 @@ package me.develop_han.TDD_start;
 public class PasswordStrengthMeter {
 
 	public PasswordStrength meter(String s) {
-		if (s.length() < 8){
-			return PasswordStrength.NORMAL;
-
+		if (s == null || s.isEmpty()) {
+			return PasswordStrength.INVALID;
 		}
-
+		boolean lengthEnough = s.length() >= 8;
 		boolean containsNum = meetsContainingNumberCriteria(s);
-		if (!containsNum)
-			return PasswordStrength.NORMAL;
+		boolean containsUpp = meetsContainingUppercaseCreteria(s);
 
+		if(lengthEnough && !containsNum && !containsUpp) return PasswordStrength.WEEK;
+		if (!lengthEnough) return PasswordStrength.NORMAL;
+		if (!containsNum) return PasswordStrength.NORMAL;
+		if (!containsUpp) return PasswordStrength.NORMAL;
 		return PasswordStrength.STRONG;
+	}
+
+	private boolean meetsContainingUppercaseCreteria(String s) {
+		for (char ch : s.toCharArray()) {
+			if (Character.isUpperCase(ch)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private boolean meetsContainingNumberCriteria(String s) {
