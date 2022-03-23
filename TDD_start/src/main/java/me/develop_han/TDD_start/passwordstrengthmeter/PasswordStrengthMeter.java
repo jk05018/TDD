@@ -1,4 +1,4 @@
-package me.develop_han.TDD_start;
+package me.develop_han.TDD_start.passwordstrengthmeter;
 
 public class PasswordStrengthMeter {
 

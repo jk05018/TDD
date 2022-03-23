@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import me.develop_han.TDD_start.calculator.Calculator;
+
 class CalculatorTest {
 
 	@DisplayName("1. 더하기(+) 테스트")
