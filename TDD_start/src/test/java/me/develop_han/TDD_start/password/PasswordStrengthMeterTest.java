@@ -1,4 +1,4 @@
-package me.develop_han.TDD_start;
+package me.develop_han.TDD_start.password;
 
 import static org.junit.jupiter.api.Assertions.*;
 
