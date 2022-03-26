@@ -1,4 +1,4 @@
-package me.develop_han.TDD_start.mock.stub;
+package me.develop_han.TDD_start.mock.stub.domain;
 
 import java.util.HashMap;
 import java.util.Map;

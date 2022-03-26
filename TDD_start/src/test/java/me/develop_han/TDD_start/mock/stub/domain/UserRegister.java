@@ -1,11 +1,14 @@
-package me.develop_han.TDD_start.mock.stub;
+package me.develop_han.TDD_start.mock.stub.domain;
+
+import me.develop_han.TDD_start.mock.stub.exception.DupidExeption;
+import me.develop_han.TDD_start.mock.stub.exception.WeakPasswordException;
 
 public class UserRegister {
-	private StubWeakPasswordChecker passwordChecker;
+	private WeakPasswordChecker passwordChecker;
 	private UserRepository repository;
 	private EmailNotifier emailNotifier;
 
-	public UserRegister(StubWeakPasswordChecker passwordChecker,
+	public UserRegister(WeakPasswordChecker passwordChecker,
 		UserRepository repository, EmailNotifier emailNotifier) {
 		this.passwordChecker = passwordChecker;
 		this.repository = repository;
