@@ -1,5 +1,7 @@
 package me.develop_han.TDD_start.join_tdd.stub.domain;
 
+import java.util.Collections;
+
 import me.develop_han.TDD_start.join_tdd.stub.exception.DupIdException;
 import me.develop_han.TDD_start.join_tdd.stub.exception.WeakPasswordException;
 import me.develop_han.TDD_start.join_tdd.stub.repository.UserRepository;
