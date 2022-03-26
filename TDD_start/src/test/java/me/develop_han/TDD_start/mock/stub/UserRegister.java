@@ -3,10 +3,13 @@ package me.develop_han.TDD_start.mock.stub;
 public class UserRegister {
 	private StubWeakPasswordChecker passwordChecker;
 	private UserRepository repository;
+	private EmailNotifier emailNotifier;
 
-	public UserRegister(StubWeakPasswordChecker passwordChecker, UserRepository userRepository) {
+	public UserRegister(StubWeakPasswordChecker passwordChecker,
+		UserRepository repository, EmailNotifier emailNotifier) {
 		this.passwordChecker = passwordChecker;
-		this.repository = userRepository;
+		this.repository = repository;
+		this.emailNotifier = emailNotifier;
 	}
 
 	public void register(String id, String pw, String email) {
@@ -19,5 +22,6 @@ public class UserRegister {
 		}
 
 		repository.save(new User(id,pw,email));
+		emailNotifier.sendRegisterEmail(email);
 	}
 }
