@@ -1,4 +1,4 @@
-package me.develop_han.TDD_start.join_tdd.stub.exception;
+package me.develop_han.TDD_start.mock.stub;
 
 public class WeakPasswordException extends RuntimeException{
 }
