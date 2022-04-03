@@ -33,4 +33,5 @@ public class MoneyBox {
 			.forEach(c -> builder.append(c.getAmount() + "원 - " + box.get(c) + "개\n"));
 		return builder.toString();
 	}
+
 }

@@ -2,6 +2,7 @@ package com.seunghan.vending_machine_tdd;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.seunghan.vending_machine_tdd.engine.ItemStorage;
 import com.seunghan.vending_machine_tdd.engine.MoneyBox;
 import com.seunghan.vending_machine_tdd.engine.util.RandomCoinGenerator;
 import com.seunghan.vending_machine_tdd.io.InputConsole;
@@ -17,7 +18,8 @@ public class VendingMachineTddApplication {
 		Input input = new InputConsole(validator);
 		Output output = new OutputConsole();
 		MoneyBox moneyBox = new MoneyBox(new RandomCoinGenerator());
-		new VendingMachine(input, output, moneyBox).run();
+		ItemStorage itemStorage = new ItemStorage();
+		new VendingMachine(input, output, moneyBox, itemStorage).run();
 
 	}
 

@@ -19,7 +19,17 @@ public class InputConsole implements Input{
 
 	@Override
 	public String[] enterItems() {
-		return new String[0];
+		return validator.validateItems(scanner.next());
+	}
+
+	@Override
+	public int enterBuyMoney() {
+		return validator.validateCurrentlyHaveMoney(scanner.next());
+	}
+
+	@Override
+	public String enterItemName() {
+		return scanner.next();
 	}
 
 }

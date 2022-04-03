@@ -15,14 +15,6 @@ public enum Coin {
 		this.amount = amount;
 	}
 
-	public static Coin getCoin(int money) {
-		return Arrays.stream(Coin.values())
-			.sorted(Comparator.comparing(Coin::getAmount, Comparator.reverseOrder()))
-			.filter(c -> c.getAmount() < money)
-			.findFirst()
-			.orElseThrow(() -> new IllegalArgumentException());
-	}
-
 	public static int findMinimumCoin() {
 		return Arrays.stream(Coin.values())
 			.mapToInt(Coin::getAmount)
