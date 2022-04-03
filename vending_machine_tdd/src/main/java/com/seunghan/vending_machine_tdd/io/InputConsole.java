@@ -14,10 +14,12 @@ public class InputConsole implements Input{
 
 	@Override
 	public int enterCurrentlyHaveMoney() {
-		String input = scanner.next();
-		return validator.validateCurrentlyHaveMoney(input);
+		return validator.validateCurrentlyHaveMoney(scanner.next());
 	}
 
-
+	@Override
+	public String[] enterItems() {
+		return new String[0];
+	}
 
 }
