@@ -6,14 +6,14 @@
 
 # 장바구니 어플리케이션 
 
-## 주제 
 온라인 주문 시 장바구니 기능 및 주문(REST-API)
-
-## 사용 기술
-* Spring Boot
-* JDBC
-* MySql
-* React.js
 
 [Shopping-basket-front](https://github.com/jk05018/shopping-basket-front)<br>
 [shopping-basket-server](https://github.com/jk05018/Shopping-basket-server)<br>
+
+
+# 게시판 어플리케이션
+
+유저 로그인, 프로필 등록, 공지사항 CURD 등 (REST API)
+
+[Notice-Board-Project](https://github.com/jk05018/NoticeBoard)<br>
